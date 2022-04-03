@@ -29,7 +29,7 @@ UI.prototype.deleteContactValue = function (target) {
             target.parentElement.remove()
             deleteTostMeg.classList.add("deleteItemsTostMeg")
             deleteTostMeg.classList.remove("tostMegDespNone")
-            setTimeout(removeDeleteTost, 5000)
+            setTimeout(removeDeleteTost, 1000)
             deleteTostMeg.classList.add("tostMegDespNone")
 
         }

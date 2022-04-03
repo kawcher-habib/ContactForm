@@ -15,15 +15,20 @@ UI.prototype.displayContactValue = function (contact) {
         <td>${contact.name}</td>
         <td>${contact.email}</td>
         <td>${contact.phone}</td>
-        <button class="btn btn-danger text-success delete">x</button>
+        <td class="btn text-danger text-success delete">x</td>
     `
     list.appendChild(newTr)
+
 }
 //delete contact value
 UI.prototype.deleteContactValue = function (target) {
+    let deleteTostMeg = document.getElementById("Item-Dele-tostMeg")
+    let removeDeleteTost = () => deleteTostMeg.classList.remove("deleteItemsTostMeg")
     if (target.classList.contains('delete')) {
         if (confirm("Ara You sure!!")) {
             target.parentElement.remove()
+            deleteTostMeg.classList.add("deleteItemsTostMeg")
+            setTimeout(removeDeleteTost, 1000)
 
         }
 
@@ -102,6 +107,8 @@ document.getElementById('submitBtn').addEventListener("click", function (e) {
     let name = document.getElementById("nameInput").value;
     email = document.getElementById('emailInput').value;
     phone = document.getElementById('numberInput').value;
+    let tostMeg = document.getElementById("tostMeg")
+    let removingClass = () => tostMeg.classList.remove("tostMeg");
 
     //
     const contact = new Contact(name, email, phone)
@@ -115,7 +122,14 @@ document.getElementById('submitBtn').addEventListener("click", function (e) {
         ui.displayContactValue(contact)
         ls.addStore(contact)
         ui.clearField()
+        tostMeg.classList.add("tostMeg")
+        setTimeout(
+            removingClass, 1000
+        )
+
     }
+
+
 })
 
 //delete event

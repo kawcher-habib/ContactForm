@@ -1,3 +1,27 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.tostMegDesNone {
+    display: none;
+}
+
+.tostMeg {
+    display: block;
+    text-align: center;
+    animation: tostMeg 4s;
+}
+
+@keyframes tostMeg {
+    from {
+        color: #198754;
+
+    }
+
+    to {}
+}
+
+.deleteItemsTostMeg {
+    display: block;
+    text-align: center;
+}

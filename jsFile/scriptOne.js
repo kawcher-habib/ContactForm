@@ -22,15 +22,18 @@ UI.prototype.displayContactValue = function (contact) {
 }
 //delete contact value
 UI.prototype.deleteContactValue = function (target) {
-    let deleteTostMeg = document.getElementById("Item-Dele-tostMeg")
+    let deleteTostMeg = document.getElementById("ItemDeleTostMeg")
     let removeDeleteTost = () => deleteTostMeg.classList.remove("deleteItemsTostMeg")
     if (target.classList.contains('delete')) {
         if (confirm("Ara You sure!!")) {
             target.parentElement.remove()
             deleteTostMeg.classList.add("deleteItemsTostMeg")
-            setTimeout(removeDeleteTost, 1000)
+            deleteTostMeg.classList.remove("tostMegDespNone")
+            setTimeout(removeDeleteTost, 5000)
+            deleteTostMeg.classList.add("tostMegDespNone")
 
         }
+
 
     }
 }

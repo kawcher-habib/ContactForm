@@ -28,9 +28,9 @@ UI.prototype.deleteContactValue = function (target) {
         if (confirm("Ara You sure!!")) {
             target.parentElement.remove()
             deleteTostMeg.classList.add("deleteItemsTostMeg")
-            deleteTostMeg.classList.remove("tostMegDespNone")
+            deleteTostMeg.classList.remove("tost-MegDesp-None")
             setTimeout(removeDeleteTost, 1000)
-            deleteTostMeg.classList.add("tostMegDespNone")
+            deleteTostMeg.classList.add("tost-MegDesp-None")
 
         }
 
@@ -126,12 +126,12 @@ document.getElementById('submitBtn').addEventListener("click", function (e) {
         ls.addStore(contact)
         ui.clearField()
         tostMeg.classList.add("tostMeg")
+
         setTimeout(
             removingClass, 1000
         )
 
     }
-
 
 })
 

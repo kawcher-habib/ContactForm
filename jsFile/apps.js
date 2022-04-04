@@ -120,7 +120,13 @@ document.getElementById('submitBtn').addEventListener("click", function (e) {
     const ls = new LS()
 
     if (name === '' || email === '' || phone === '') {
-        alert("Please Enter Your Input")
+        tostMeg.innerText = "FillUp Input"
+        tostMeg.classList.add("tostMeg")
+        tostMeg.classList.add("text-danger")
+        setTimeout(
+            removingClass, 1000
+        )
+
     } else {
         ui.displayContactValue(contact)
         ls.addStore(contact)

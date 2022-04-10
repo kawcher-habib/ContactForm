@@ -54,8 +54,6 @@ UI.prototype.searchBar = function (value) {
             row.style.display = 'none'
         }
     })
-
-
 }
 //local store
 function LS() {

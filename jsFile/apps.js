@@ -28,9 +28,9 @@ UI.prototype.deleteContactValue = function (target) {
         if (confirm("Ara You sure!!")) {
             target.parentElement.remove()
             deleteTostMeg.classList.add("deleteItemsTostMeg")
-            deleteTostMeg.classList.remove("tost-MegDesp-None")
+            deleteTostMeg.classList.remove("tostMeg-display")
             setTimeout(removeDeleteTost, 1000)
-            deleteTostMeg.classList.add("tost-MegDesp-None")
+            deleteTostMeg.classList.add("tostMeg-display")
 
         }
 
@@ -54,6 +54,7 @@ UI.prototype.searchBar = function (value) {
             row.style.display = 'none'
         }
     })
+
 }
 //local store
 function LS() {

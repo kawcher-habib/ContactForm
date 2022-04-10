@@ -111,33 +111,39 @@ document.getElementById('submitBtn').addEventListener("click", function (e) {
     email = document.getElementById('emailInput').value;
     phone = document.getElementById('numberInput').value;
     let tostMeg = document.getElementById("tostMeg")
-    let removingClass = () => tostMeg.classList.remove("tostMeg");
+    let removingClass = () => tostMeg.style.display = "none";
 
     //
     const contact = new Contact(name, email, phone)
+
 
     const ui = new UI()
     const ls = new LS()
 
     if (name === '' || email === '' || phone === '') {
-        tostMeg.innerText = "FillUp Input"
-        tostMeg.classList.add("tostMeg")
+        tostMeg.style.display = "block"
         tostMeg.classList.add("text-danger")
-        setTimeout(
-            removingClass, 1000
-        )
-
-    } else {
-        ui.displayContactValue(contact)
-        ls.addStore(contact)
-        ui.clearField()
-        tostMeg.classList.add("tostMeg")
+        tostMeg.innerText = "FillUp Input"
 
         setTimeout(
             removingClass, 1000
         )
 
     }
+    else {
+        ui.displayContactValue(contact)
+        ls.addStore(contact)
+        ui.clearField()
+        tostMeg.style.display = "block"
+        tostMeg.classList.remove("text-danger")
+        tostMeg.classList.add("text-success")
+        tostMeg.innerText = "Successful!"
+        setTimeout(
+            removingClass, 1000
+        )
+
+    }
+
 
 })
 
